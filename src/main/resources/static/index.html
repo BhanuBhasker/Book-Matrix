@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookMatrix — Find events and book tickets</title>
+  <meta name="description" content="BookMatrix: discover events and book tickets.">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/pages/home.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Concerts · Theatre · Comedy · Talks</p>
+          <h1>Find something worth going out for.</h1>
+          <p class="lead">Browse what is on near you, check how many seats are left, and book in under a minute. No queues, no surprises at the door.</p>
+          <div class="hero-stats" id="hero-stats"></div>
+        </div>
+        <form class="search-bar" id="home-search" role="search" action="/events.html">
+          <label class="visually-hidden" for="home-q">Search events</label>
+          <input class="input" id="home-q" name="q" type="search" maxlength="100" placeholder="Artist, show, venue or city">
+          <label class="visually-hidden" for="home-city">City</label>
+          <select class="input" id="home-city" name="city"><option value="">Any city</option></select>
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="container"><div class="chips" id="home-categories" aria-label="Browse by category"></div></div>
+    </section>
+    <div class="container">
+      <section class="section" id="featured-section" hidden>
+        <div class="section-head"><h2>Featured</h2></div>
+        <div class="featured-grid" id="featured"></div>
+      </section>
+      <section class="section">
+        <div class="section-head"><h2>Coming up</h2><a href="/events.html">See all events →</a></div>
+        <div id="upcoming"></div>
+      </section>
+      <section class="section" id="cta" hidden>
+        <div class="card spread">
+          <div><h2 style="margin:0">Keep your tickets in one place</h2><p class="muted" style="margin:4px 0 0">Create a free account to book, view and cancel your bookings.</p></div>
+          <a class="btn btn-accent" href="/register.html">Create account</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>

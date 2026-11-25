@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventory — BookMatrix Admin</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/admin/inventory.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side" aria-label="Admin navigation"></aside>
+    <main id="main" class="admin-main" tabindex="-1">
+      <div class="page-title"><div><p class="eyebrow">Monitor</p><h1>Inventory</h1></div>
+        <label class="checkbox"><input type="checkbox" id="include-archived"> Include archived</label></div>
+      <p class="muted small" style="max-width:70ch">“Sold + held” is the counter stored on each event. It must equal the paid tickets plus the tickets held for unpaid bookings, and for reserved seating also the seats taken. Any mismatch is flagged here.</p>
+      <div id="summary" style="margin-bottom:16px"></div>
+      <div id="table"></div>
+    </main>
+  </div>
+</body>
+</html>

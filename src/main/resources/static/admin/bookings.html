@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookings — BookMatrix Admin</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/admin/bookings.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side" aria-label="Admin navigation"></aside>
+    <main id="main" class="admin-main" tabindex="-1">
+      <div class="page-title"><div><p class="eyebrow">Manage</p><h1>Bookings</h1></div><a class="btn btn-secondary" href="/api/admin/data/bookings.csv">Export CSV</a></div>
+      <form class="toolbar" id="toolbar" role="search">
+        <label class="visually-hidden" for="bk-q">Search</label><input class="input" id="bk-q" name="q" type="search" maxlength="100" placeholder="Reference, customer, email or event">
+        <label class="visually-hidden" for="bk-status">Status</label>
+        <select class="input" id="bk-status" name="status"><option value="ALL">All bookings</option><option value="CONFIRMED">Confirmed (paid)</option><option value="PENDING">Awaiting payment</option><option value="EXPIRED">Expired holds</option><option value="UPCOMING">Upcoming</option><option value="PAST">Past events</option><option value="CANCELLED">Cancelled</option></select>
+      </form>
+      <div id="table"></div>
+      <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+    </main>
+  </div>
+</body>
+</html>

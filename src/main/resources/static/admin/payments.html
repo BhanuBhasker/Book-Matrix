@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payments — BookMatrix Admin</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/admin/payments.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side" aria-label="Admin navigation"></aside>
+    <main id="main" class="admin-main" tabindex="-1">
+      <div class="page-title"><div><p class="eyebrow">Demo gateway</p><h1>Payments</h1></div></div>
+      <p class="muted small" style="max-width:70ch">Every attempt with the demo payment gateway: successful charges, declined attempts and refunds. Only the card brand and last 4 digits are ever stored.</p>
+      <form class="toolbar" id="toolbar" role="search">
+        <label class="visually-hidden" for="p-q">Search</label><input class="input" id="p-q" name="q" type="search" maxlength="100" placeholder="Booking ref, transaction, last 4 digits, UPI ID">
+        <label class="visually-hidden" for="p-kind">Type</label><select class="input" id="p-kind" name="kind"><option value="">Charges and refunds</option><option value="CHARGE">Charges</option><option value="REFUND">Refunds</option></select>
+        <label class="visually-hidden" for="p-status">Result</label><select class="input" id="p-status" name="status"><option value="">Any result</option><option value="SUCCEEDED">Succeeded</option><option value="FAILED">Declined</option></select>
+      </form>
+      <div id="table"></div>
+      <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+    </main>
+  </div>
+</body>
+</html>

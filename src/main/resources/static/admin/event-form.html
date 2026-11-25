@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event — BookMatrix Admin</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/admin/event-form.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side" aria-label="Admin navigation"></aside>
+    <main id="main" class="admin-main" tabindex="-1">
+      <div class="page-title"><div><p class="eyebrow"><a href="/admin/events.html">Events</a></p><h1 id="form-title">New event</h1></div></div>
+      <form id="event-form" class="card" novalidate style="max-width:860px">
+        <div class="alert alert-error form-alert" role="alert" hidden></div>
+        <div class="form-grid">
+          <div class="field span-2"><label for="title">Title</label><input class="input" id="title" name="title" maxlength="150" required></div>
+          <div class="field span-2"><label for="description">Description</label><textarea class="input" id="description" name="description" maxlength="5000" required></textarea></div>
+          <div class="field"><label for="categoryId">Category</label><select class="input" id="categoryId" name="categoryId" required><option value="">Choose…</option></select></div>
+          <div class="field"><label for="imageUrl">Image URL <span class="muted">(optional)</span></label><input class="input" id="imageUrl" name="imageUrl" type="url" maxlength="500" placeholder="https://…"></div>
+          <div class="field"><label for="venueName">Venue</label><input class="input" id="venueName" name="venueName" maxlength="120" required></div>
+          <div class="field"><label for="city">City</label><input class="input" id="city" name="city" maxlength="80" required></div>
+          <div class="field span-2"><label for="venueAddress">Venue address <span class="muted">(optional)</span></label><input class="input" id="venueAddress" name="venueAddress" maxlength="255"></div>
+          <div class="field"><label for="startsAt">Starts</label><input class="input" id="startsAt" name="startsAt" type="datetime-local" required></div>
+          <div class="field"><label for="endsAt">Ends</label><input class="input" id="endsAt" name="endsAt" type="datetime-local" required></div>
+          <div class="field"><label for="ticketPrice">Ticket price (₹)</label><input class="input" id="ticketPrice" name="ticketPrice" type="number" min="0" step="0.01" required><span class="hint">Use 0 for free events.</span></div>
+          <div class="field"><label for="seatingType">Seating</label>
+            <select class="input" id="seatingType" name="seatingType">
+              <option value="GENERAL">General admission — customers choose a quantity</option>
+              <option value="RESERVED">Reserved seats — customers pick seats on a map</option>
+            </select></div>
+          <div class="field"><label for="capacity">Capacity</label><input class="input" id="capacity" name="capacity" type="number" min="1" max="100000" step="1" required><span class="hint" id="capacity-hint"></span></div>
+          <div class="field" data-layout hidden><label for="seatRows">Rows (A–Z)</label><input class="input" id="seatRows" name="seatRows" type="number" min="1" max="26" step="1" value="6"></div>
+          <div class="field" data-layout hidden><label for="seatsPerRow">Seats per row</label><input class="input" id="seatsPerRow" name="seatsPerRow" type="number" min="1" max="30" step="1" value="10"></div>
+          <p class="small muted span-2" data-layout hidden id="layout-hint"></p>
+          <div class="field span-2"><label class="checkbox"><input type="checkbox" id="featured" name="featured" value="true"> Feature this event on the home page</label></div>
+        </div>
+        <div class="row"><button class="btn" type="submit" id="save-btn">Create event</button><a class="btn btn-secondary" href="/admin/events.html" id="cancel-link">Cancel</a></div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

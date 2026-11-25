@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My bookings — BookMatrix</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/pages/bookings.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <div class="page-head"><p class="eyebrow">Your tickets</p><h1>My bookings</h1></div>
+      <div class="tabs" role="tablist" aria-label="Filter bookings">
+        <button role="tab" type="button" data-filter="ALL" aria-selected="true">All</button>
+        <button role="tab" type="button" data-filter="UPCOMING" aria-selected="false">Upcoming</button>
+        <button role="tab" type="button" data-filter="PAST" aria-selected="false">Past</button>
+        <button role="tab" type="button" data-filter="CANCELLED" aria-selected="false">Cancelled</button>
+      </div>
+      <div class="toolbar"><label class="visually-hidden" for="b-q">Search bookings</label><input class="input" id="b-q" type="search" maxlength="100" placeholder="Search by event, venue or reference"></div>
+      <div id="list" aria-live="polite"></div>
+      <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>

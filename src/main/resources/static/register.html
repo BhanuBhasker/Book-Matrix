@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account — BookMatrix</title>
+  <meta name="description" content="BookMatrix: discover events and book tickets.">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/pages/register.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="auth-wrap">
+      <div class="panel">
+        <h1>Create your account</h1>
+        <p class="muted">It takes a minute. You will use it to book and manage tickets.</p>
+        <form id="register-form" novalidate>
+          <div class="alert alert-error form-alert" role="alert" hidden></div>
+          <div class="field"><label for="fullName">Full name</label><input class="input" id="fullName" name="fullName" autocomplete="name" maxlength="100" required></div>
+          <div class="field"><label for="email">Email</label><input class="input" id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+          <div class="field"><label for="password">Password</label><input class="input" id="password" name="password" type="password" autocomplete="new-password" maxlength="72" required aria-describedby="pw-hint"><span class="hint" id="pw-hint">At least 8 characters, with a letter and a number.</span></div>
+          <div class="field"><label for="confirmPassword">Confirm password</label><input class="input" id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" maxlength="72" required></div>
+          <button class="btn btn-block" type="submit">Create account</button>
+        </form>
+        <p class="small muted" style="margin:16px 0 0">Already registered? <a href="/login.html">Log in</a></p>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>

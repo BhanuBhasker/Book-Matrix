@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data — BookMatrix Admin</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/app.css?v=2026112505">
+  <script type="module" src="/js/admin/data.js?v=2026112505"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side" aria-label="Admin navigation"></aside>
+    <main id="main" class="admin-main" tabindex="-1">
+      <div class="page-title"><div><p class="eyebrow">Files</p><h1>Import, export &amp; backup</h1></div></div>
+      <div class="grid-2">
+        <section class="card">
+          <h2>Export</h2>
+          <p class="small muted">Download CSV files that open in Excel or Google Sheets.</p>
+          <div class="row"><a class="btn btn-secondary" href="/api/admin/data/events.csv">Events CSV</a><a class="btn btn-secondary" href="/api/admin/data/bookings.csv">Bookings CSV</a></div>
+        </section>
+        <section class="card">
+          <h2>Backup</h2>
+          <p class="small muted">Writes events, bookings and users (without passwords) to a timestamped folder on the server.</p>
+          <button class="btn btn-secondary" type="button" id="backup-btn">Create backup now</button>
+          <div id="backups" class="small" style="margin-top:12px"></div>
+        </section>
+      </div>
+      <section class="card" style="margin-top:24px">
+        <h2>Import events from CSV</h2>
+        <p class="small muted">Required columns: <span class="mono">title, description, category, venue, city, starts_at, ends_at, price</span>, plus <span class="mono">capacity</span> for general admission. Optional: <span class="mono">address, image_url, featured, seating</span> (GENERAL or RESERVED) with <span class="mono">seat_rows, seats_per_row</span>. Dates look like <span class="mono">2027-01-15T19:30</span>. Every row is validated first; invalid or duplicate rows are skipped and listed below. A ready-made sample is in the project at <span class="mono">data/sample-events.csv</span>.</p>
+        <form id="import-form" novalidate>
+          <div class="alert alert-error form-alert" role="alert" hidden></div>
+          <div class="field" style="max-width:420px"><label for="file">CSV file (max 1 MB)</label><input class="input" id="file" name="file" type="file" accept=".csv,text/csv" required style="padding-top:8px"></div>
+          <button class="btn" type="submit">Upload and import</button>
+        </form>
+        <div id="import-report" style="margin-top:16px" aria-live="polite"></div>
+      </section>
+      <section style="margin-top:24px">
+        <h2 style="font-size:18px">Activity log</h2>
+        <div id="activity"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
